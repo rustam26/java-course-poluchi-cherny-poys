@@ -19,25 +19,32 @@ public class HashCodeExample1 {
 
         System.out.println(map);
 
-        Student st4 = new Student("Rustam", "Kosimov", 1);
-        Student st5 = new Student("Igorik", "Sidorov", 4);
+        System.out.println(map.containsKey(st1));
 
-        boolean result = map.containsKey(st4);
-        System.out.println(result);
 
-        System.out.println(st1.hashCode());
-        System.out.println(st5.hashCode());
 
-        for (Map.Entry<Student , Double> m : map.entrySet()){
-            System.out.println(m.getKey()+" "+m.getValue());
-        }
+//        Student st4 = new Student("Rustam", "Kosimov", 1);
+//        Student st5 = new Student("Igorik", "Sidorov", 4);
+//
+//        boolean result = map.containsKey(st4);
+//        System.out.println(result);
+//
+//        System.out.println(st1.hashCode());
+//        System.out.println(st5.hashCode());
+//
+//        for (Map.Entry<Student , Double> m : map.entrySet()){
+//            System.out.println(m.getKey()+" "+m.getValue());
+//        }
+//
+//        Map<Integer, String> map2 = new HashMap<>(16,0.75f);
+//
     }
 }
 
-class Student{
-    String name;
-    String surname;
-    int course;
+ final class Student implements Comparable{
+    final String name;
+    final String surname;
+    final int course;
 
 
     public Student(String name, String surname, int course) {
@@ -67,4 +74,10 @@ class Student{
                 ", course=" + course +
                 '}';
     }
-}
+
+     @Override
+     public int compareTo(Object o) {
+        Student student  = (Student) o;
+        return this.name.compareTo(student.name);
+     }
+ }
