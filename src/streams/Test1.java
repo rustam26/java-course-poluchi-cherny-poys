@@ -25,7 +25,7 @@ public class Test1 {
         int[] array = {5,9,3,8,1};
         array = Arrays.stream(array).map(element -> {
             if (element%3 == 0) {
-                element = element/3;
+                element = element/   3;
             }
             return element;
         }).toArray();
