@@ -5,7 +5,6 @@ public class InterruptionEx {
     public static void main(String[] args) throws InterruptedException {
         System.out.println("main starts");
 
-
         InterruptedThread thread = new InterruptedThread();
         thread.start();
         Thread.sleep(2000);
@@ -26,7 +25,7 @@ class InterruptedThread extends Thread {
 
         for (int i = 0; i < 1000000000; i++) {
 
-            if (isInterrupted()){
+            if (isInterrupted()) {
                 System.out.println("Potok xotyat prervat");
                 System.out.println("Mi ubedilis, chto sosotyanie vsex obyektov " +
                         "normalnoe i reshili zavershit rabotu potoka");
